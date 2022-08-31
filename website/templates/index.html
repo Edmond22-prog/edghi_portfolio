@@ -21,7 +21,6 @@
                     <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
                     <li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
                     <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-                    {# <li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>#}
                     <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
                 </ul>
             </div>
@@ -70,7 +69,7 @@
                              data-scrollax=" properties: { translateY: '70%' }">
                             <div class="text">
                                 <span class="subheading">Hi!</span>
-                                <h1 class="mb-4 mt-3">I'm a <span>python developer</span> & <span>junior flutter developer</span>
+                                <h1 class="mb-4 mt-3">I'm a <span>python</span> & <span>junior flutter </span>developer
                                 </h1>
                                 <p>
                                     <a href="#skills-section" class="btn btn-primary py-3 px-4">Skills</a>
@@ -153,7 +152,7 @@
                         <div class="resume-wrap ftco-animate">
                             <span class="date">{{ resume.start }} - {{ resume.end }}</span>
                             <h2>{{ resume.title }}</h2>
-                            <span class="position">{{ resume.structure }}</span>
+                            <span class="position">{{ resume.structure }} (Community)</span>
                             <p class="mt-4">{{ resume.description }}</p>
                         </div>
                     {% endfor %}
@@ -165,7 +164,7 @@
                         <div class="resume-wrap ftco-animate">
                             <span class="date">{{ resume.start }} - {{ resume.end }}</span>
                             <h2>{{ resume.title }}</h2>
-                            <span class="position">{{ resume.structure }}</span>
+                            <span class="position">{{ resume.structure }} (Professional)</span>
                             <p class="mt-4">{{ resume.description }}</p>
                         </div>
                     {% endfor %}
@@ -175,7 +174,7 @@
             </div>
             <div class="row justify-content-center mt-5">
                 <div class="col-md-6 text-center ftco-animate">
-                    <p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
+                    <p><a target="_blank" class="btn btn-primary py-4 px-5" href={{ cv.get_absolute_url }}>Download CV</a></p>
                 </div>
             </div>
         </div>
@@ -360,7 +359,6 @@
                         </div>
                         <h3 class="mb-4">Address</h3>
                         <p>Ngoa-Ekelle, Yaoundé, Cameroon</p>
-                        <p>Deido, Douala, Cameroon</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -389,34 +387,6 @@
                         <h3 class="mb-4">Website</h3>
                         <p><a href={% url 'home' %}>edghiresume.com</a></p>
                     </div>
-                </div>
-            </div>
-
-            <div class="row no-gutters block-9">
-                <div class="col-md-6 order-md-last d-flex">
-                    <form action="#" class="bg-light p-4 p-md-5 contact-form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control"
-                                      placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                        </div>
-                    </form>
-                </div>
-
-                <div class="col-md-6 d-flex">
-                    <div class="img"
-                         style="background-image: url({% static 'img/project-6.jpg' %});"></div>
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ from django.contrib import admin
 
 
 # Register your models here.
-from website.models import Project, Resume
+from website.models import Project, Resume, Cv
 
 
 class ProjectAdmin(admin.ModelAdmin):
@@ -19,3 +19,4 @@ class ResumeAdmin(admin.ModelAdmin):
 
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Resume, ResumeAdmin)
+admin.site.register(Cv)
