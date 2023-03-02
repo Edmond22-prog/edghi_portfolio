@@ -1,0 +1,67 @@
+{% extends 'main.html' %}
+{% load static %}
+{% load humanize %}
+
+{% comment %} Title of the page {% endcomment %}
+
+{% block title %}
+  {{ query.name }}
+{% endblock title %}
+
+{% comment %} Body of the page {% endcomment %}
+{% block body %}
+<!-- ======= Portfolio Details ======= -->
+<div id="portfolio-details" class="portfolio-details">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-8">
+        <h2 class="portfolio-title d-flex justify-content-between w-100">{{ query.name }}
+        <a href="#description" class="d-lg-none">
+          <i class="bx bx-down-arrow-circle"></i>
+        </a>
+      </h2>
+
+        <div class="grid-container">
+
+          {% for img in images %}
+            <div>
+              <img class='grid-item grid-item-{{ forloop.counter }}' src="{{ img.imageURL }}" alt='{{ img.caption }}'>
+              <span class="d-flex align-items-center justify-content-between p-2">
+                <p class="text-left float-start">{{ img.caption }}</p>
+                &ThickSpace;
+                <a href="{{ img.imageURL }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ query.name }}:&#13;{{ img.caption }}"><i class="bi bi-arrows-fullscreen border rounded-circle p-1 px-2 bg-white text-dark"></i></a>
+              </span>
+            </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+      <div id="description" class="col-lg-4 portfolio-info">
+        <small class="text-muted">
+          <a href="{% url 'home' %}">Home</a> / <a href="{% url 'home' %}#portfolio">Realisations</a> / {{ query.name }}
+        </small>
+        <h3 class="fw-bold mt-3">Project information</h3>
+        <ul>
+          <li><strong>Category</strong>: {{ query.category.name }} Design</li>
+          <li><strong>Client</strong>: {{ query.client }}</li>
+          <li><strong>Project date</strong>: {{ query.project_date }} <span class="text-white-50">({{ query.project_date | naturaltime }})</span></li>
+          <li><strong>Project URL</strong>: <a href="#">  {{ query.project_url }}</a></li>
+        </ul>
+
+        <br>
+        <h3 class="fw-bold">Project Description</h3>
+        {% comment %} <p> {% endcomment %}
+          {{ query.description.html | safe }}
+        {% comment %} </p> {% endcomment %}
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- End Portfolio Details -->
+{% endblock body %}

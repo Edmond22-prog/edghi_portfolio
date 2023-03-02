@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-in$geq!73ks&ojb^vznp%)8oy59&kolv5tmqa392-rj(tu)yh(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,11 +37,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'whitenoise.runserver_nostatic',
+    'django.contrib.humanize',
+    'django_quill',
+    'colorfield',
+    
     'website',
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -106,11 +112,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Africa/Douala" #"UTC"
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False #True
 
 
 # Static files (CSS, JavaScript, Images)
