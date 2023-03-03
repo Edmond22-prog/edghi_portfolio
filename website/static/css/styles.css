@@ -547,7 +547,29 @@ section .container {
       gap: 10px;
     }
     .skillsimg img:first-child {
-      margin-left: 60%;
+      margin-left: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .skillsimg {
+      width: 100%;
+      overflow: scroll;
+      gap: 10px;
+    }
+    .skillsimg img:first-child {
+      margin-left: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .skillsimg {
+      width: 100%;
+      overflow: scroll;
+      gap: 10px;
+    }
+    .skillsimg img:first-child {
+      margin-left: 10%;
     }
   }
 
