@@ -2,13 +2,15 @@ from django.contrib import admin
 from .models import AboutInfo, Count, Interest, Testimonial, ProjectCategory, Project, ProjectImage
     
 class CountsAdmin(admin.ModelAdmin):
-    list_display = ['id', 'number', 'text', 'updated_at']
+    list_display = ['id', 'number', 'text', 'updated_at', 'hide']
+    list_editable = ['number', 'hide']
     
 class InterestAdmin(admin.ModelAdmin):
     list_display = ['id', 'text', 'color', 'updated_at']
     
 class TestimonialAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'role', 'updated_at']
+    list_display = ['id', 'name', 'role', 'updated_at', 'show']
+    list_editable = ['show']
     
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id', 'name', 'updated_at']

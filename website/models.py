@@ -16,6 +16,7 @@ class Cv(models.Model):
     def get_absolute_url(self):
         return self.file.url
 
+
 class AboutInfo(models.Model):
     FREELANCE_CHOICES = [
         ('Available | Full time', 'Available | Full time'),
@@ -36,11 +37,13 @@ class AboutInfo(models.Model):
     
     def __str__(self):
         return 'Last modified on -> ' + str(self.updated_at)
+  
     
 class Count(models.Model):
     icon = models.CharField(max_length = 150, default='Bootstrap Icon name')
     number = models.PositiveIntegerField()
     text = models.CharField(max_length=150)
+    hide = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
@@ -51,6 +54,7 @@ class Count(models.Model):
     # The icon library used here is https://icons.getbootstrap.com/.
     # You just need to add the name of the icon i.e.
     # If the icon you want to use is bi-person, you just take 'person' for the icon field.
+ 
     
 class Interest(models.Model):
     icon = models.CharField(max_length = 150, default='Remix Icon name')
@@ -67,18 +71,20 @@ class Interest(models.Model):
     # You just need to add the name of the icon i.e.
     # If the icon you want to use is ri-open-arm-line, you just take 'open-arm-line' for the icon field.
     
+    
 class Testimonial(models.Model):
     quote = models.TextField(max_length=300)
     name = models.CharField(max_length=150)
     role = models.CharField(max_length=150)
     twitter = models.URLField(max_length = 200, null=True, blank=True)
     website = models.URLField(max_length = 200, null=True, blank=True)
-    show = models.BooleanField(default=True)
+    show = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
         return f'Testimonial {self.id} from {self.name} | {self.role} '
+    
     
 class ProjectCategory(models.Model):
     CATEGORY_CHOICES = [
@@ -93,6 +99,7 @@ class ProjectCategory(models.Model):
     
     def __str__(self):
         return f'Project Category {self.id} : {self.name}' 
+    
     
 class Project(models.Model):
     category = models.ForeignKey(ProjectCategory, on_delete=models.CASCADE)
@@ -111,6 +118,7 @@ class Project(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Project, self).save(*args, **kwargs)
+    
     
 class ProjectImage(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='images')

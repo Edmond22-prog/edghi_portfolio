@@ -73,13 +73,15 @@
       <div class="row">
 
         {% for item in counts %}
-            <div class="col-lg-3 col-md-6 mt-2">
-                <div class="count-box">
-                <i class="bi bi-{{ item.icon }}"></i>
-                <span data-purecounter-start="0" data-purecounter-end="{{ item.number }}" data-purecounter-duration="1" class="purecounter"></span>
-                <p>{{ item.text }}</p>
-                </div>
-            </div>
+            {% if item.hide == False %}
+              <div class="col-lg-3 col-md-6 mt-2">
+                  <div class="count-box">
+                  <i class="bi bi-{{ item.icon }}"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="{{ item.number }}" data-purecounter-duration="1" class="purecounter"></span>
+                  <p>{{ item.text }}</p>
+                  </div>
+              </div>
+            {% endif %}
         {% endfor %}
 
       </div>
@@ -285,7 +287,7 @@
           <div class="info-box">
             <i class="bx bx-map"></i>
             <h3>Here I am</h3>
-            <p>Awae Ewonkang, Yaounde, Cameroon</p>
+            <p>Obili, Yaounde, Cameroon</p>
           </div>
         </div>
 
@@ -298,7 +300,7 @@
                 <a href="https://twitter.com/MakolleG" class="twitter"><i class="bi bi-twitter"></i></a>  
                 <a href="https://www.linkedin.com/in/edmond-ghislain-makolle-99716b1a2/" class="linkedin mx-2"><i class="bi bi-linkedin"></i></a>
                 <a href="https://t.me/Edghi_Makol" class="telegram mx-2"><i class="bi bi-telegram"></i></a>
-                <a href="https://g.dev/" class="google mx-2"><i class="bi bi-code-square"></i></a>
+                <a href="https://g.dev/edghi" class="google mx-2"><i class="bi bi-google"></i></a>
                 <a href="https://wa.me/23791678378?text=Salut%20Ghislain." class="whatsapp ms-1"><i class="bi bi-whatsapp"></i></a>
             </div>
           </div>
