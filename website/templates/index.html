@@ -7,7 +7,7 @@
 {% endblock add_head %}
 
 {% comment %} Title of the page {% endcomment %}
-{% block title %}Edmond Ghislain{% endblock title %}
+{% block title %}Edghi{% endblock title %}
 
 {% comment %} Body of the page {% endcomment %}
 {% block body %}
@@ -38,8 +38,8 @@
           <div class="row">
             <div class="col-lg-6">
               <ul>
-                <li><i class="bx bx-cake"></i> <strong>Birthday:</strong><span><!-- TODO: Check your birth date --> 22 Mai 1999</span></li>
-                <li><i class="bi bi-images"></i> <strong>Collection:</strong> <span><a href="<!-- TODO: Link to your realisations' Google Photos Album -->" target="_blank">Join the album <i class="bi bi-box-arrow-up-right"></i></a></span></li>
+                <li><i class="bx bx-cake"></i> <strong>Birthday:</strong><span> 22 Mai 1999</span></li>
+                {% comment %} <li><i class="bi bi-images"></i> <strong>Collection:</strong> <span><a href="<!-- TODO: Link to your realisations' Google Photos Album -->" target="_blank">Join the album <i class="bi bi-box-arrow-up-right"></i></a></span></li> {% endcomment %}
                 <li><i class="bx bxs-phone"></i> <strong>Phone:</strong> <span>{{ about.phone }}</span></li>
                 <li><i class="bx bx-map"></i> <strong>City:</strong> <span>{{ about.city }}</span></li>
               </ul>
@@ -106,6 +106,7 @@
                 <img src="{% static 'img/skills/postgresql.png' %}" alt="PostgreSQL" class="image-fluid">
                 <img src="{% static 'img/skills/graphql.png' %}" alt="GraphQL" class="image-fluid">
                 <img src="{% static 'img/skills/flutter.png' %}" alt="Flutter" class="image-fluid">
+                <img src="{% static 'img/skills/elasticsearch.png' %}" alt="Elasticsearch" class="image-fluid">
             </div>
         </div>
 
@@ -287,7 +288,7 @@
           <div class="info-box">
             <i class="bx bx-map"></i>
             <h3>Here I am</h3>
-            <p>Obili, Yaounde, Cameroon</p>
+            <p>Carrefour Obili, Yaounde, Cameroon</p>
           </div>
         </div>
 
