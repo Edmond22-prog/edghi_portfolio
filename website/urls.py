@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import HomeView, CaseView
 
+from website.views.base import base
 
 urlpatterns = [
-    path('', HomeView.as_view(), name="home"),
-    path('details/<str:pk>/<slug:project>/', CaseView.as_view(), name="case"),
+    path("", base),
 ]
