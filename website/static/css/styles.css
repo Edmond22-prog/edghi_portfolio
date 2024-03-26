@@ -18,6 +18,28 @@
   --color-secondary: #ffffff;
 }
 
+/* Image Colored */
+.grayscale {
+  filter: grayscale(100%);
+}
+
+/* Outlined Button Color */
+.btn-outline-custom {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-custom:hover {
+  color: #fff;
+  background-color: var(--color-hover);
+  border-color: var(--color-hover);
+}
+
+/* Font size biography */
+div.biography {
+  font-size: 18px;
+}
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -531,47 +553,50 @@ section .container {
     background-color: var(--color-primary);
   } */
 
+.skillsimg {
+  max-width: 600px;
+  max-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 425px) {
   .skillsimg {
-    max-width: 600px;
-    max-height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    width: 100%;
+    overflow: scroll;
+    gap: 10px;
   }
 
-  @media screen and (max-width: 425px) {
-    .skillsimg {
-      width: 100%;
-      overflow: scroll;
-      gap: 10px;
-    }
-    .skillsimg img:first-child {
-      margin-left: 100%;
-    }
+  .skillsimg img:first-child {
+    margin-left: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skillsimg {
+    width: 100%;
+    overflow: scroll;
+    gap: 10px;
   }
 
-  @media screen and (max-width: 768px) {
-    .skillsimg {
-      width: 100%;
-      overflow: scroll;
-      gap: 10px;
-    }
-    .skillsimg img:first-child {
-      margin-left: 100%;
-    }
+  .skillsimg img:first-child {
+    margin-left: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .skillsimg {
+    width: 100%;
+    overflow: scroll;
+    gap: 10px;
   }
 
-  @media screen and (max-width: 1024px) {
-    .skillsimg {
-      width: 100%;
-      overflow: scroll;
-      gap: 10px;
-    }
-    .skillsimg img:first-child {
-      margin-left: 10%;
-    }
+  .skillsimg img:first-child {
+    margin-left: 10%;
   }
+}
 
 .skillsimg img {
   width: 30%;
