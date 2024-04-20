@@ -5,36 +5,34 @@
             <h2>Resume</h2>
             <p>Check My Resume</p>
         </div>
-        <div class="d-grid gap-2 d-md-block">
-            You can download my resume >> <a href="#" class="btn btn-outline-custom" role="button">Here</a> <<
-        </div>
+        {% if resume_file %}
+            <div class="d-grid gap-2 d-md-block">
+                You can download my resume >> <a href={{ resume_file }} class="btn btn-outline-custom" role="button">Here</a> <<
+            </div>
+        {% endif %}
 
         <div class="row">
             <!-- Maybe adding a div for an image -->
             <div class="col-lg-6">
                 <h3 class="resume-title">Professional Experience</h3>
-                <div class="resume-item">
-                    <div class="col-lg-4" data-aos="fade-right">
-                        <img src="https://static.djangoproject.com/img/logos/django-logo-negative.png" class="img-fluid" alt="">
+                {% for exp in resume %}
+                    <div class="resume-item">
+                        <div class="col-lg-4" data-aos="fade-right">
+                            <img src="{{ exp.company_image.url }}" class="img-fluid" alt="">
+                        </div>
+                        <br>
+                        <h4>{{ exp.title }}</h4>
+                        <h5>{{ exp.start_date }} - {{ exp.end_date }}</h5>
+                        <p><em>{{ exp.employment_type }} ({{ exp.employment_location }}) </em></p>
+                        <p><em><a href="{{ exp.company_link }}">{{ exp.company_name }}</a> | {{ exp.company_location }} </em></p>
+                        <p>
+                            {{ exp.description.html | safe }}
+                        </p>
                     </div>
-                    <h4>Senior graphic design specialist</h4>
-                    <h5>2019 - Present</h5>
-                    <p><em>Experion, New York, NY </em></p>
-                    <p>
-                    <ul>
-                        <li>Lead in the design, development, and implementation of the graphic, layout, and
-                            production communication materials</li>
-                        <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of
-                            the project. </li>
-                        <li>Supervise the assessment of all graphic materials in order to ensure quality and
-                            accuracy of the design</li>
-                        <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000
-                        </li>
-                    </ul>
-                    </p>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
     </div>
-</section><!-- End Resume Section -->
+</section>
+<!-- End Resume Section -->
